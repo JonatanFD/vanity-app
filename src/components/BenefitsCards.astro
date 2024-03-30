@@ -1,0 +1,71 @@
+---
+import Card from "./Card.astro";
+
+const CARDS_TOP = [
+    {
+        img: "/icons/speed-icon.svg",
+        alt: "Alta velocidad y ancho de banda",
+        title: "Velocidad inigualable",
+        desc: "Con nuestros servidores distribuidos alrededor del mundo, ofrecemos una conectividad mínima de 300 MB por segudo.",
+    },
+    {
+        img: "/icons/robot-icon.svg",
+        alt: "Anti DDOS",
+        title: "Anti DDOS",
+        desc: "Protege tu conexión contra ataques cibernéticos con nuestro servicio anti DDoS integrado. Mantén tu actividad en línea segura y sin interrupciones.",
+    },
+    {
+        img: "/icons/secure-icon.svg",
+        alt: "Encriptado",
+        title: "Encriptación de punta a punta",
+        desc: "Utilizamos tecnología de encriptación especializada para garantizar que tus datos viajen de manera segura y sin riesgos desde tu dispositivo hasta su destino, protegiéndote de ciberataques y sniffing.",
+    },
+
+    {
+        img: "/icons/assistant-icon.svg",
+        alt: "Atencion 24 horas",
+        title: "Atención 24 horas",
+        desc: "Nuestro equipo de soporte está disponible las 24 horas del día, los 7 días de la semana, listo para resolver cualquier consulta o problema que puedas tener, asegurando que nunca estés solo en tu viaje en línea.",
+    },
+    {
+        img: "/icons/metrics-icon.svg",
+        alt: "Metricas",
+        title: "Gestiona tu experiencia",
+        desc: "Controla tu experiencia VPN con nuestras herramientas de métricas de uso avanzadas. Monitoriza tu actividad en línea, gestiona tus preferencias de conexión y accede a información valiosa sobre tu uso de la VPN, todo desde una interfaz intuitiva y fácil de usar.",
+    },
+    {
+        img: "/icons/configuration-icon.svg",
+        alt: "Customizable",
+        title: "Customizable",
+        desc: "Adapta tu experiencia VPN según tus necesidades específicas con nuestras opciones de personalización. Desde la elección de servidores hasta la configuración de protocolos de seguridad, te ofrecemos la flexibilidad necesaria para crear la VPN perfecta para ti.",
+    },
+];
+---
+
+<section class="w-full">
+    <div class="mx-auto max-w-7xl text-center">
+        <h2 class="text-5xl font-bold mb-20">¿Qué ofrecemos?</h2>
+
+        <article class="gap-x-4 gap-y-4 justify-items-center px-4">
+            {
+                CARDS_TOP.map((card) => (
+                    <Card
+                        img={card.img}
+                        alt={card.alt}
+                        title={card.title}
+                        desc={card.desc}
+                    />
+                ))
+            }
+        </article>
+    </div>
+</section>
+
+<style>
+    article {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1rem;
+        justify-items: center;
+    }
+</style>
