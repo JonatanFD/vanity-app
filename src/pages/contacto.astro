@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ContactoForm from "../components/contacto/ContactForm.tsx";
 ---
 
 <Layout title="Vanity VPN">
-    <div>Esto es el contacto</div>
+   <ContactoForm client:only="react"/>
 </Layout>

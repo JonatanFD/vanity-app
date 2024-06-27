@@ -1,0 +1,43 @@
+---
+import PlanCard from "./landing/PlanCard.astro";
+
+const pricing = [
+    {
+        title: "Básico (30 días)",
+        description: "Empieza a proteger tu información a un precio único.",
+        price: "Free",
+        features: ["Conexión a 100 servidores", "10 GB de datos", "+3 Países", "Ancho de banda compartido"],
+    },
+    {
+        title: "Pro (30 días)",
+        description: "Ten un control más granular de tu protección en la red.",
+        price: "S/ 50 x mes",
+        features: ["Conexión a +3200 servidores", "Sin límite de datos", "+100 Países", "Ancho de banda privado"],
+    },
+    {
+        title: "Business",
+        description: "Protege a tu empresa con una solución personalizada.",
+        price: "Contáctanos",
+        features: ["Conexión a +5000 servidores", "Sin límite de datos", "+150 Países", "Ancho de banda privado", "Soporte 24/7", "Y más..."],
+    }
+];
+---
+
+<section class="w-full bg-[#1A1B1E] py-20">
+    <div class="mx-auto max-w-7xl text-center" id="planes">
+        <h2 class="text-4xl mb-16 font-bold">Conoce nuestros planes</h2>
+
+        <section class="flex flex-col gap-8 items-center xl:items-stretch justify-center xl:flex-row">
+            {
+                pricing.map((plan) => (
+                    <PlanCard
+                        description={plan.description}
+                        features={plan.features}
+                        title={plan.title}
+                        price={plan.price}
+                    />
+                ))
+            }
+        </section>
+    </div>
+</section>

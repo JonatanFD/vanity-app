@@ -1,0 +1,45 @@
+---
+import { number } from "astro/zod";
+
+interface Props {
+    title: string;
+    description: string;
+    price: number | string;
+    features: string[];
+}
+
+const { description, features, price, title } = Astro.props;
+---
+
+<section
+    class="bg-[#2C3034] w-[380px] text-start rounded-3xl shadow-xl border-[#454545] border"
+>
+    <div
+        class="p-8 flex flex-col gap-8 text-[#BBBBBB] border-b border-[#454545]"
+    >
+        <h2 class="text-xl font-bold">{title}</h2>
+        <p class="text-lg font-medium">{description}</p>
+        <span class="font-medium text-3xl"
+            >{price}</span
+        >
+        <a
+            href="./"
+            class="w-full font-bold text-lg rounded-xl py-2 bg-[#B62D30] text-center hover:bg-[#b0171a]"
+            >{ title == "Business" ? `Contactar` : "Adquirir"}</a
+        >
+    </div>
+
+    <div class="p-8">
+        <p class="font-bold text-xl mb-3">¿Qué incluye?</p>
+        <ul class="flex flex-col gap-4">
+            {
+                features.map((feature) => (
+                    <li class="flex items-center gap-3">
+                        <img src="/icons/feature-icon.svg" alt="feature" />
+                        {feature}
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>

@@ -2,25 +2,17 @@
 import BenefitsCards from "../components/BenefitsCards.astro";
 import Brands from "../components/Brands";
 import WorldMap from "../components/landing/WorldMap.astro";
+import Pricing from "../components/Pricing.astro";
+import ServerFeatures from "../components/ServerFeatures.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Vanity VPN">
-    <main class="w-full flex flex-col pt-16 h-[9000px]">
+    <main class="w-full flex flex-col pt-16 ">
         <WorldMap />
-
         <Brands client:only="react" />
-
         <BenefitsCards />
+        <ServerFeatures />
+        <Pricing />
     </main>
 </Layout>
-
-<style>
-    span {
-        background: linear-gradient(180deg, #d73b3f 0%, #af1f21 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-    }
-</style>

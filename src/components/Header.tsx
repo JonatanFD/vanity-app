@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 const PAGE_ANCHORS = [
-    { name: "Características", href: "#" },
-    { name: "Planes", href: "#" },
+    { name: "Características", href: "#features" },
+    { name: "Planes", href: "#planes" },
 ];
 
 export default function Header() {
@@ -43,13 +43,13 @@ export default function Header() {
                             key={index}
                             href={anchor.href}
                             rel="noopener noreferrer"
-                            className={`text-sm hover:text-blue-500 transition-colors lg:inline ${open ? "text-xl" : "hidden"}`}
+                            className={`text-xl hover:text-blue-500 transition-colors lg:inline ${open ? "text-xl" : "hidden"}`}
                         >
                             {anchor.name}
                         </a>
                     ))}
                     <a
-                        href="/contacto"
+                        href="#"
                         rel="noopener noreferrer"
                         className={`py-2 px-5 rounded-lg bg-[--primary-color] ${open ? "inline" : "hidden"} lg:hidden`}
                     >
